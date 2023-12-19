@@ -1,0 +1,25 @@
+name: "Docker"
+
+on:
+  push:
+    branches: ["master"]
+
+  schedule:
+    - cron: "0 8 * * 1"
+
+jobs:
+  build:
+    name: "Build"
+    uses: dockette/.github/.github/workflows/docker.yml@master
+    secrets: inherit
+    with:
+        image: "dockette/blackfire"
+        tag: "${{ matrix.tag }}"
+        dockerfile: "${{ matrix.dockerfile }}"
+    strategy:
+      max-parallel: 3
+      fail-fast: false
+      matrix:
+        include:
+          - dockerfile: Dockerfile
+            tag: latest
