@@ -6,7 +6,7 @@ build:
 
 .PHONY: test
 test:
-	docker run --rm ${DOCKER_IMAGE} --version
+	docker run --rm ${DOCKER_IMAGE} version
 	docker run --rm ${DOCKER_IMAGE} --help
 
 .PHONY: run
