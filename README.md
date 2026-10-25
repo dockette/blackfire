@@ -13,12 +13,34 @@
 
 -----
 
+[Blackfire](https://blackfire.io) CLI in Docker, on Debian `bookworm-slim`. The entrypoint is `blackfire`.
+
 ## Usage
 
-```
+```sh
 docker run -it --rm dockette/blackfire curl http://localhost:8000
+```
+
+## Versions
+
+| Version | Release |
+|---------|---------|
+| `dockette/blackfire:YYYY.MM.DD` | release `YYYY.MM.DD` |
+| `dockette/blackfire:latest` | latest build of `master` |
+
+Releases are listed on [GitHub](https://github.com/dockette/blackfire/releases).
+
+## Development
+
+```sh
+make build     # build the image
+make test      # run blackfire version and --help
+make run       # run the image
+make version   # print VERSION
+make release   # set today's date in VERSION
 ```
 
 ## Maintenance
 
-See [how to contribute](https://github.com/dockette/.github/blob/master/CONTRIBUTING.md) to this package. Consider to [support](https://github.com/sponsors/f3l1x) **f3l1x**. Thank you for using this package.
+See [how to contribute](https://github.com/dockette/.github/blob/master/CONTRIBUTING.md) to this package. Consider to
+[support](https://github.com/sponsors/f3l1x) **f3l1x**. Thank you for using this package.
