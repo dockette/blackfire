@@ -25,10 +25,12 @@ docker run -it --rm dockette/blackfire curl http://localhost:8000
 
 | Version | Release |
 |---------|---------|
+| `dockette/blackfire:2026.10.2-YYYY.MM.DD` | release `YYYY.MM.DD` |
+| `dockette/blackfire:2026.10.2` | latest release |
 | `dockette/blackfire:YYYY.MM.DD` | release `YYYY.MM.DD` |
 | `dockette/blackfire:latest` | latest build of `master` |
 
-Releases are listed on [GitHub](https://github.com/dockette/blackfire/releases).
+All versions ship Blackfire CLI `2026.10.2`, pinned by `BLACKFIRE_VERSION` in `VERSION`. Releases are listed on [GitHub](https://github.com/dockette/blackfire/releases).
 
 ## Development
 
