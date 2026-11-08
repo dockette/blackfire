@@ -1,8 +1,9 @@
 DOCKER_IMAGE = dockette/blackfire
+include VERSION
 
 .PHONY: build
 build:
-	docker build -t ${DOCKER_IMAGE} .
+	docker build --build-arg BLACKFIRE_VERSION=${BLACKFIRE_VERSION} -t ${DOCKER_IMAGE} .
 
 .PHONY: test
 test:
@@ -12,3 +13,12 @@ test:
 .PHONY: run
 run:
 	docker run -it --rm ${DOCKER_IMAGE}
+
+.PHONY: version
+version:
+	@echo ${VERSION}
+
+.PHONY: release
+release:
+	@sed -i.bak "s/^VERSION=.*/VERSION=$$(date -u +%Y.%m.%d)/" VERSION && rm VERSION.bak
+	@cat VERSION
